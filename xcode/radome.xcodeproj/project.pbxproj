@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		3A1EED814B304DA68CEB8678 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBA71EDFC81A438E96F13131 /* UdpSocket.cpp */; };
+		17394D85E6F2406BBF31A786 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F774EBBE647C9A33C02B4 /* NetworkingUtils.cpp */; };
+		5A0CF36D3C1C41CEB10F17C5 /* OscTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1561FCBF449E4A03A612B07C /* OscTypes.h */; };
+		A8A6C62D6EEC4972B520E95A /* OscReceivedElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A92F770B714268ACF6B76D /* OscReceivedElements.h */; };
+		1179BF19F8EB4A8094578043 /* OscPrintReceivedElements.h in Headers */ = {isa = PBXBuildFile; fileRef = CB62BEEABA02489382FBE664 /* OscPrintReceivedElements.h */; };
+		34D7AF7E736E42C6A8D7EE91 /* OscPacketListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9627A5AC9F304FF7AC1206F5 /* OscPacketListener.h */; };
+		7B349489E0E245AAAD3C71BA /* OscOutboundPacketStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E699AA2D3E094360876749C5 /* OscOutboundPacketStream.h */; };
+		47FB5AA0EAA043EE9878922F /* OscHostEndianness.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BDC4C8C997F4124A7F0C1C6 /* OscHostEndianness.h */; };
+		C8CEFA3F2C8D4A56BE5E839C /* OscException.h in Headers */ = {isa = PBXBuildFile; fileRef = 95249E75882E43B9A2F7C463 /* OscException.h */; };
+		DC9814A3565F474E8D68EEB4 /* MessageMappingOscPacketListener.h in Headers */ = {isa = PBXBuildFile; fileRef = C9CEF6103912449599C78CF9 /* MessageMappingOscPacketListener.h */; };
+		CE1942DB64C14F66B33ED5E7 /* UdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A02636DE9E2489C9AB8FD86 /* UdpSocket.h */; };
+		213C4ECF286E4C85A94D83C1 /* TimerListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 71618DE7C18F455EB6879E2A /* TimerListener.h */; };
+		674F5EC69A20465AAB80AFF9 /* PacketListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E0425D78CF245A7BDF53DA6 /* PacketListener.h */; };
+		274DE40A80434A459B793A21 /* NetworkingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC8F841DE045588E14829E /* NetworkingUtils.h */; };
+		B9F01C13C97C451D95AC3B8D /* IpEndpointName.h in Headers */ = {isa = PBXBuildFile; fileRef = 4944779DDEFC4938B7085A50 /* IpEndpointName.h */; };
+		210A368EAAC94E2085DAB4E5 /* OscSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 02662FADDF6041F59EBCD72F /* OscSender.h */; };
+		45292859254148A48903ED45 /* OscMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DF5AD7B8D3C842949FEB93D4 /* OscMessage.h */; };
+		D880F8834A3D4F0B890600D5 /* OscListener.h in Headers */ = {isa = PBXBuildFile; fileRef = F633C84281D34287B1DBB2B4 /* OscListener.h */; };
+		249507C8A5BC4CFAAE02D2F5 /* OscBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = F672D09145DB428694A75467 /* OscBundle.h */; };
+		4514E26F4CFC4AE194D04673 /* OscArg.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A8367B1A644E74BB03F50D /* OscArg.h */; };
+		8711E5BE6FB54304BD3EB800 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 032CA83947D94CCA8F4052D9 /* OscTypes.cpp */; };
+		632B98B2C20A4A7F9E7E67D1 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503A9CCA9BEC417F9CB85C32 /* OscReceivedElements.cpp */; };
+		A51B3FCFA8814DB280E68910 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FEEEB25F51B4455A4276C79 /* OscPrintReceivedElements.cpp */; };
+		CDE387679099432C88F5C7E8 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6025054FCAB64E57911823CB /* OscOutboundPacketStream.cpp */; };
+		7C076E17AB1A4771A5F45A76 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F6473A0ACE048F7A1B7E79C /* IpEndpointName.cpp */; };
+		2C93ECBE220243358E14E03A /* OscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2773BD626CA4A1087395828 /* OscSender.cpp */; };
+		89FD725DB7784991A9F0E1D9 /* OscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4932A80CE4A44676998E1400 /* OscMessage.cpp */; };
+		9507D402048A4F359D64B207 /* OscListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EF9AC1FAE482BAB5B4978 /* OscListener.cpp */; };
+		2105860075164B52A4ACD195 /* OscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08B40423FDC341A6BE6D5336 /* OscBundle.cpp */; };
+		0D29FEAB3C2B49D18C779CA4 /* ciUIWidgetWithLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DDC36F9DD754B4B95B376C1 /* ciUIWidgetWithLabel.h */; };
+		443F090358714616A9A03829 /* ciUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0A4BACFD92498CA4FEA517 /* ciUIWidget.h */; };
+		0DACD7CB9BEF484CBB00018F /* ciUIWaveform.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA1D72ED0F94AE6946BF0F6 /* ciUIWaveform.h */; };
+		9D4C3A677E5049C7B393BFF2 /* ciUIToggleMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = D8C54AE1D94C4674AFC62613 /* ciUIToggleMatrix.h */; };
+		18999A1DBCD843F989874564 /* ciUIToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = E5B3483D39B042F79518E855 /* ciUIToggle.h */; };
+		80853C1A4F304D6ABCF03595 /* ciUITextInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D1D528F60AE48AABFEC19D6 /* ciUITextInput.h */; };
+		6DC03026E9F445878D4E7B28 /* ciUISpectrum.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF55BF88FA547EAAFAF069A /* ciUISpectrum.h */; };
+		75FF539C7F5D43CD99DCE9BC /* ciUISpacer.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0ADE9ED26741F594A7A962 /* ciUISpacer.h */; };
+		C8243B7D272646F3B6468464 /* ciUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = D50889EA804E4144AA8AFDFA /* ciUISlider.h */; };
+		0ABD7225502245C4AEFB5123 /* ciUIScrollableCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 70ABD71A80094B7E9A57C773 /* ciUIScrollableCanvas.h */; };
+		5638C432A23348159CAAB04B /* ciUIRotarySlider.h in Headers */ = {isa = PBXBuildFile; fileRef = C646C04FAA23449E8DBBC388 /* ciUIRotarySlider.h */; };
+		575801DCCB2F4C2FB7CC933F /* ciUIRectangle.h in Headers */ = {isa = PBXBuildFile; fileRef = B82FC84FCC194EF69EE9B490 /* ciUIRectangle.h */; };
+		B79CDBEDA8754F98A5B2658D /* ciUIRangeSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 906E3AAC1D89438F905CB16F /* ciUIRangeSlider.h */; };
+		91575D7F26564BE2BEC79CA2 /* ciUIRadio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BC9338016004654AB061E66 /* ciUIRadio.h */; };
+		1130EE64EE6043AC90CAB417 /* ciUINumberDialer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0702BCBDBF4B49BD88925815 /* ciUINumberDialer.h */; };
+		78C8658A9FC24168886B306A /* ciUIMultiImageToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C67F483E9074F70B61F53AD /* ciUIMultiImageToggle.h */; };
+		7D8D83AF18DD4FE1B7D7CA67 /* ciUIMultiImageButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 947D23B0CE3847F7A80B97B8 /* ciUIMultiImageButton.h */; };
+		955A422C5BC041BE9C1902D5 /* ciUIMovingGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = A4AE5C25683649BFA2BC53F3 /* ciUIMovingGraph.h */; };
+		6975BC203114448C811E213D /* ciUIMinimalSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2898EB922B814D8A90433BE0 /* ciUIMinimalSlider.h */; };
+		0B1EEF7D0BAB475BADE7EA2E /* ciUILabelToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 281ED04F72EC4F5D8BC1C9B1 /* ciUILabelToggle.h */; };
+		81CC5C2AC9BB4605B0EDD401 /* ciUILabelButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 377B17C0943F4E6AA51F291D /* ciUILabelButton.h */; };
+		DB281D4B50404DD2A50B8C39 /* ciUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FEB88F9AA4B4845BD6FAB59 /* ciUILabel.h */; };
+		C02E0CAD8D204C2E8760B4B2 /* ciUIImageToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BA8E098B1E444C968C10BF /* ciUIImageToggle.h */; };
+		F79C9D9A02244E328E5DAB4E /* ciUIImageSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E9F747C55014B389AB1501A /* ciUIImageSlider.h */; };
+		1FF2EA7358D5464BB59154D9 /* ciUIImageSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 677AD27F25394ECE89AB0829 /* ciUIImageSampler.h */; };
+		47009CEB9D444FDA9C401D21 /* ciUIImageButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F338D05D6BFD43308FEC650C /* ciUIImageButton.h */; };
+		DD15D655107544BDB7CA33BF /* ciUIImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FDA1718142A4CFC854462B1 /* ciUIImage.h */; };
+		E7A61C3381D342CF94184911 /* ciUIFPSSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = A48F8417734F4F8C8F51B51D /* ciUIFPSSlider.h */; };
+		F08DD52AC4824BC6B12546C9 /* ciUIFPS.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4BD9AD339F493691590181 /* ciUIFPS.h */; };
+		3EECD4B6F7714F30915C7067 /* ciUIEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3378E8672C7A4776890EC665 /* ciUIEvent.h */; };
+		160A0DA5ADAF45B8BBE05EA5 /* ciUIDropDownList.h in Headers */ = {isa = PBXBuildFile; fileRef = DDCDB46AE36F496EA1B5F265 /* ciUIDropDownList.h */; };
+		FAD7CD038C3E4DA8A519EE06 /* ciUICircleSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0E4608FF2546B4A4B9DCF8 /* ciUICircleSlider.h */; };
+		D1CEC06BE7DF4A0CA1345578 /* ciUICanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = A82A23642E564912BC49AE05 /* ciUICanvas.h */; };
+		755110F7C6454DE4BEE56890 /* ciUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FB5074B3E4C44605A2F39164 /* ciUIButton.h */; };
+		89BB34E4C4654A15BF19AB60 /* ciUIBiLabelSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B11DB6804346628716A719 /* ciUIBiLabelSlider.h */; };
+		C97135EE48E94AFC920ABEAE /* ciUI2DPad.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A3E5CEBDD794FC3968AB76E /* ciUI2DPad.h */; };
+		B46720F058B94F33905A122E /* ciUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D88FFFCF0F14F5989FE338E /* ciUI.h */; };
+		03574EC18E154AF1B4D6DDFB /* radome_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 4E58CFA27BF24B0794BFAEE2 /* radome_Prefix.pch */; };
+		00D5A5DA366F4018914ED8FF /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */; };
+		AF0CBCB622CF4DA68B1A6BF9 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DDB7562AFA4876A15C34A7 /* Resources.h */; };
+		1F24D6B5F3AE4AFFBF494AB4 /* radomeApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD950E86031466D89D1F37D /* radomeApp.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		8D1107320486CEB800E47090 /* radome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD950E86031466D89D1F37D /* radomeApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/radomeApp.cpp; sourceTree = "<group>"; name = radomeApp.cpp; };
+		95DDB7562AFA4876A15C34A7 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
+		C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
+		8D1265B883AB436292689AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
+		4E58CFA27BF24B0794BFAEE2 /* radome_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = radome_Prefix.pch; sourceTree = "<group>"; name = radome_Prefix.pch; };
+		0D88FFFCF0F14F5989FE338E /* ciUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUI.h; sourceTree = "<group>"; name = ciUI.h; };
+		2A3E5CEBDD794FC3968AB76E /* ciUI2DPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUI2DPad.h; sourceTree = "<group>"; name = ciUI2DPad.h; };
+		C6B11DB6804346628716A719 /* ciUIBiLabelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIBiLabelSlider.h; sourceTree = "<group>"; name = ciUIBiLabelSlider.h; };
+		FB5074B3E4C44605A2F39164 /* ciUIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIButton.h; sourceTree = "<group>"; name = ciUIButton.h; };
+		A82A23642E564912BC49AE05 /* ciUICanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUICanvas.h; sourceTree = "<group>"; name = ciUICanvas.h; };
+		8D0E4608FF2546B4A4B9DCF8 /* ciUICircleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUICircleSlider.h; sourceTree = "<group>"; name = ciUICircleSlider.h; };
+		DDCDB46AE36F496EA1B5F265 /* ciUIDropDownList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIDropDownList.h; sourceTree = "<group>"; name = ciUIDropDownList.h; };
+		3378E8672C7A4776890EC665 /* ciUIEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIEvent.h; sourceTree = "<group>"; name = ciUIEvent.h; };
+		9B4BD9AD339F493691590181 /* ciUIFPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIFPS.h; sourceTree = "<group>"; name = ciUIFPS.h; };
+		A48F8417734F4F8C8F51B51D /* ciUIFPSSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIFPSSlider.h; sourceTree = "<group>"; name = ciUIFPSSlider.h; };
+		3FDA1718142A4CFC854462B1 /* ciUIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIImage.h; sourceTree = "<group>"; name = ciUIImage.h; };
+		F338D05D6BFD43308FEC650C /* ciUIImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIImageButton.h; sourceTree = "<group>"; name = ciUIImageButton.h; };
+		677AD27F25394ECE89AB0829 /* ciUIImageSampler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIImageSampler.h; sourceTree = "<group>"; name = ciUIImageSampler.h; };
+		3E9F747C55014B389AB1501A /* ciUIImageSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIImageSlider.h; sourceTree = "<group>"; name = ciUIImageSlider.h; };
+		E0BA8E098B1E444C968C10BF /* ciUIImageToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIImageToggle.h; sourceTree = "<group>"; name = ciUIImageToggle.h; };
+		2FEB88F9AA4B4845BD6FAB59 /* ciUILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUILabel.h; sourceTree = "<group>"; name = ciUILabel.h; };
+		377B17C0943F4E6AA51F291D /* ciUILabelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUILabelButton.h; sourceTree = "<group>"; name = ciUILabelButton.h; };
+		281ED04F72EC4F5D8BC1C9B1 /* ciUILabelToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUILabelToggle.h; sourceTree = "<group>"; name = ciUILabelToggle.h; };
+		2898EB922B814D8A90433BE0 /* ciUIMinimalSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIMinimalSlider.h; sourceTree = "<group>"; name = ciUIMinimalSlider.h; };
+		A4AE5C25683649BFA2BC53F3 /* ciUIMovingGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIMovingGraph.h; sourceTree = "<group>"; name = ciUIMovingGraph.h; };
+		947D23B0CE3847F7A80B97B8 /* ciUIMultiImageButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIMultiImageButton.h; sourceTree = "<group>"; name = ciUIMultiImageButton.h; };
+		6C67F483E9074F70B61F53AD /* ciUIMultiImageToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIMultiImageToggle.h; sourceTree = "<group>"; name = ciUIMultiImageToggle.h; };
+		0702BCBDBF4B49BD88925815 /* ciUINumberDialer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUINumberDialer.h; sourceTree = "<group>"; name = ciUINumberDialer.h; };
+		0BC9338016004654AB061E66 /* ciUIRadio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIRadio.h; sourceTree = "<group>"; name = ciUIRadio.h; };
+		906E3AAC1D89438F905CB16F /* ciUIRangeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIRangeSlider.h; sourceTree = "<group>"; name = ciUIRangeSlider.h; };
+		B82FC84FCC194EF69EE9B490 /* ciUIRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIRectangle.h; sourceTree = "<group>"; name = ciUIRectangle.h; };
+		C646C04FAA23449E8DBBC388 /* ciUIRotarySlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIRotarySlider.h; sourceTree = "<group>"; name = ciUIRotarySlider.h; };
+		70ABD71A80094B7E9A57C773 /* ciUIScrollableCanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIScrollableCanvas.h; sourceTree = "<group>"; name = ciUIScrollableCanvas.h; };
+		D50889EA804E4144AA8AFDFA /* ciUISlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUISlider.h; sourceTree = "<group>"; name = ciUISlider.h; };
+		BF0ADE9ED26741F594A7A962 /* ciUISpacer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUISpacer.h; sourceTree = "<group>"; name = ciUISpacer.h; };
+		CAF55BF88FA547EAAFAF069A /* ciUISpectrum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUISpectrum.h; sourceTree = "<group>"; name = ciUISpectrum.h; };
+		4D1D528F60AE48AABFEC19D6 /* ciUITextInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUITextInput.h; sourceTree = "<group>"; name = ciUITextInput.h; };
+		E5B3483D39B042F79518E855 /* ciUIToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIToggle.h; sourceTree = "<group>"; name = ciUIToggle.h; };
+		D8C54AE1D94C4674AFC62613 /* ciUIToggleMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIToggleMatrix.h; sourceTree = "<group>"; name = ciUIToggleMatrix.h; };
+		CEA1D72ED0F94AE6946BF0F6 /* ciUIWaveform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIWaveform.h; sourceTree = "<group>"; name = ciUIWaveform.h; };
+		0A0A4BACFD92498CA4FEA517 /* ciUIWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIWidget.h; sourceTree = "<group>"; name = ciUIWidget.h; };
+		6DDC36F9DD754B4B95B376C1 /* ciUIWidgetWithLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/ciUI/src/ciUIWidgetWithLabel.h; sourceTree = "<group>"; name = ciUIWidgetWithLabel.h; };
+		08B40423FDC341A6BE6D5336 /* OscBundle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/OscBundle.cpp; sourceTree = "<group>"; name = OscBundle.cpp; };
+		5A8EF9AC1FAE482BAB5B4978 /* OscListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/OscListener.cpp; sourceTree = "<group>"; name = OscListener.cpp; };
+		4932A80CE4A44676998E1400 /* OscMessage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/OscMessage.cpp; sourceTree = "<group>"; name = OscMessage.cpp; };
+		E2773BD626CA4A1087395828 /* OscSender.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/OscSender.cpp; sourceTree = "<group>"; name = OscSender.cpp; };
+		4F6473A0ACE048F7A1B7E79C /* IpEndpointName.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/ip/IpEndpointName.cpp; sourceTree = "<group>"; name = IpEndpointName.cpp; };
+		6025054FCAB64E57911823CB /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/osc/OscOutboundPacketStream.cpp; sourceTree = "<group>"; name = OscOutboundPacketStream.cpp; };
+		2FEEEB25F51B4455A4276C79 /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/osc/OscPrintReceivedElements.cpp; sourceTree = "<group>"; name = OscPrintReceivedElements.cpp; };
+		503A9CCA9BEC417F9CB85C32 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/osc/OscReceivedElements.cpp; sourceTree = "<group>"; name = OscReceivedElements.cpp; };
+		032CA83947D94CCA8F4052D9 /* OscTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/osc/OscTypes.cpp; sourceTree = "<group>"; name = OscTypes.cpp; };
+		84A8367B1A644E74BB03F50D /* OscArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/OscArg.h; sourceTree = "<group>"; name = OscArg.h; };
+		F672D09145DB428694A75467 /* OscBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/OscBundle.h; sourceTree = "<group>"; name = OscBundle.h; };
+		F633C84281D34287B1DBB2B4 /* OscListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/OscListener.h; sourceTree = "<group>"; name = OscListener.h; };
+		DF5AD7B8D3C842949FEB93D4 /* OscMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/OscMessage.h; sourceTree = "<group>"; name = OscMessage.h; };
+		02662FADDF6041F59EBCD72F /* OscSender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/OscSender.h; sourceTree = "<group>"; name = OscSender.h; };
+		4944779DDEFC4938B7085A50 /* IpEndpointName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/ip/IpEndpointName.h; sourceTree = "<group>"; name = IpEndpointName.h; };
+		88CC8F841DE045588E14829E /* NetworkingUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/ip/NetworkingUtils.h; sourceTree = "<group>"; name = NetworkingUtils.h; };
+		1E0425D78CF245A7BDF53DA6 /* PacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/ip/PacketListener.h; sourceTree = "<group>"; name = PacketListener.h; };
+		71618DE7C18F455EB6879E2A /* TimerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/ip/TimerListener.h; sourceTree = "<group>"; name = TimerListener.h; };
+		8A02636DE9E2489C9AB8FD86 /* UdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/ip/UdpSocket.h; sourceTree = "<group>"; name = UdpSocket.h; };
+		C9CEF6103912449599C78CF9 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/MessageMappingOscPacketListener.h; sourceTree = "<group>"; name = MessageMappingOscPacketListener.h; };
+		95249E75882E43B9A2F7C463 /* OscException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscException.h; sourceTree = "<group>"; name = OscException.h; };
+		2BDC4C8C997F4124A7F0C1C6 /* OscHostEndianness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscHostEndianness.h; sourceTree = "<group>"; name = OscHostEndianness.h; };
+		E699AA2D3E094360876749C5 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscOutboundPacketStream.h; sourceTree = "<group>"; name = OscOutboundPacketStream.h; };
+		9627A5AC9F304FF7AC1206F5 /* OscPacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscPacketListener.h; sourceTree = "<group>"; name = OscPacketListener.h; };
+		CB62BEEABA02489382FBE664 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscPrintReceivedElements.h; sourceTree = "<group>"; name = OscPrintReceivedElements.h; };
+		32A92F770B714268ACF6B76D /* OscReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscReceivedElements.h; sourceTree = "<group>"; name = OscReceivedElements.h; };
+		1561FCBF449E4A03A612B07C /* OscTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/OSC/src/osc/OscTypes.h; sourceTree = "<group>"; name = OscTypes.h; };
+		8C6F774EBBE647C9A33C02B4 /* NetworkingUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/ip/posix/NetworkingUtils.cpp; sourceTree = "<group>"; name = NetworkingUtils.cpp; };
+		FBA71EDFC81A438E96F13131 /* UdpSocket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/OSC/src/ip/posix/UdpSocket.cpp; sourceTree = "<group>"; name = UdpSocket.cpp; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1BD950E86031466D89D1F37D /* radomeApp.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				5323E6B50EAFCA7E003A9687 /* QTKit.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* radome.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* radome */ = {
+			isa = PBXGroup;
+			children = (
+				01B97315FEAEA392516A2CEA /* Blocks */,
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = radome;
+			sourceTree = "<group>";
+		};
+		2CF46E66DA944127AE7DB7ED /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0D88FFFCF0F14F5989FE338E /* ciUI.h */,
+				2A3E5CEBDD794FC3968AB76E /* ciUI2DPad.h */,
+				C6B11DB6804346628716A719 /* ciUIBiLabelSlider.h */,
+				FB5074B3E4C44605A2F39164 /* ciUIButton.h */,
+				A82A23642E564912BC49AE05 /* ciUICanvas.h */,
+				8D0E4608FF2546B4A4B9DCF8 /* ciUICircleSlider.h */,
+				DDCDB46AE36F496EA1B5F265 /* ciUIDropDownList.h */,
+				3378E8672C7A4776890EC665 /* ciUIEvent.h */,
+				9B4BD9AD339F493691590181 /* ciUIFPS.h */,
+				A48F8417734F4F8C8F51B51D /* ciUIFPSSlider.h */,
+				3FDA1718142A4CFC854462B1 /* ciUIImage.h */,
+				F338D05D6BFD43308FEC650C /* ciUIImageButton.h */,
+				677AD27F25394ECE89AB0829 /* ciUIImageSampler.h */,
+				3E9F747C55014B389AB1501A /* ciUIImageSlider.h */,
+				E0BA8E098B1E444C968C10BF /* ciUIImageToggle.h */,
+				2FEB88F9AA4B4845BD6FAB59 /* ciUILabel.h */,
+				377B17C0943F4E6AA51F291D /* ciUILabelButton.h */,
+				281ED04F72EC4F5D8BC1C9B1 /* ciUILabelToggle.h */,
+				2898EB922B814D8A90433BE0 /* ciUIMinimalSlider.h */,
+				A4AE5C25683649BFA2BC53F3 /* ciUIMovingGraph.h */,
+				947D23B0CE3847F7A80B97B8 /* ciUIMultiImageButton.h */,
+				6C67F483E9074F70B61F53AD /* ciUIMultiImageToggle.h */,
+				0702BCBDBF4B49BD88925815 /* ciUINumberDialer.h */,
+				0BC9338016004654AB061E66 /* ciUIRadio.h */,
+				906E3AAC1D89438F905CB16F /* ciUIRangeSlider.h */,
+				B82FC84FCC194EF69EE9B490 /* ciUIRectangle.h */,
+				C646C04FAA23449E8DBBC388 /* ciUIRotarySlider.h */,
+				70ABD71A80094B7E9A57C773 /* ciUIScrollableCanvas.h */,
+				D50889EA804E4144AA8AFDFA /* ciUISlider.h */,
+				BF0ADE9ED26741F594A7A962 /* ciUISpacer.h */,
+				CAF55BF88FA547EAAFAF069A /* ciUISpectrum.h */,
+				4D1D528F60AE48AABFEC19D6 /* ciUITextInput.h */,
+				E5B3483D39B042F79518E855 /* ciUIToggle.h */,
+				D8C54AE1D94C4674AFC62613 /* ciUIToggleMatrix.h */,
+				CEA1D72ED0F94AE6946BF0F6 /* ciUIWaveform.h */,
+				0A0A4BACFD92498CA4FEA517 /* ciUIWidget.h */,
+				6DDC36F9DD754B4B95B376C1 /* ciUIWidgetWithLabel.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		12F7D4C834224323A526FD23 /* ciUI */ = {
+			isa = PBXGroup;
+			children = (
+				2CF46E66DA944127AE7DB7ED /* src */,
+			);
+			name = ciUI;
+			sourceTree = "<group>";
+		};
+		9ABAA8085C3B49AE98FAD90D /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				8C6F774EBBE647C9A33C02B4 /* NetworkingUtils.cpp */,
+				FBA71EDFC81A438E96F13131 /* UdpSocket.cpp */,
+			);
+			name = posix;
+			sourceTree = "<group>";
+		};
+		55EFCC5282DC47E49BD3C1A8 /* ip */ = {
+			isa = PBXGroup;
+			children = (
+				4F6473A0ACE048F7A1B7E79C /* IpEndpointName.cpp */,
+				4944779DDEFC4938B7085A50 /* IpEndpointName.h */,
+				88CC8F841DE045588E14829E /* NetworkingUtils.h */,
+				1E0425D78CF245A7BDF53DA6 /* PacketListener.h */,
+				71618DE7C18F455EB6879E2A /* TimerListener.h */,
+				8A02636DE9E2489C9AB8FD86 /* UdpSocket.h */,
+				9ABAA8085C3B49AE98FAD90D /* posix */,
+			);
+			name = ip;
+			sourceTree = "<group>";
+		};
+		7AE4EF67F5894B44A4171A24 /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				6025054FCAB64E57911823CB /* OscOutboundPacketStream.cpp */,
+				2FEEEB25F51B4455A4276C79 /* OscPrintReceivedElements.cpp */,
+				503A9CCA9BEC417F9CB85C32 /* OscReceivedElements.cpp */,
+				032CA83947D94CCA8F4052D9 /* OscTypes.cpp */,
+				C9CEF6103912449599C78CF9 /* MessageMappingOscPacketListener.h */,
+				95249E75882E43B9A2F7C463 /* OscException.h */,
+				2BDC4C8C997F4124A7F0C1C6 /* OscHostEndianness.h */,
+				E699AA2D3E094360876749C5 /* OscOutboundPacketStream.h */,
+				9627A5AC9F304FF7AC1206F5 /* OscPacketListener.h */,
+				CB62BEEABA02489382FBE664 /* OscPrintReceivedElements.h */,
+				32A92F770B714268ACF6B76D /* OscReceivedElements.h */,
+				1561FCBF449E4A03A612B07C /* OscTypes.h */,
+			);
+			name = osc;
+			sourceTree = "<group>";
+		};
+		42FA263CA78645E5A015880E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				08B40423FDC341A6BE6D5336 /* OscBundle.cpp */,
+				5A8EF9AC1FAE482BAB5B4978 /* OscListener.cpp */,
+				4932A80CE4A44676998E1400 /* OscMessage.cpp */,
+				E2773BD626CA4A1087395828 /* OscSender.cpp */,
+				55EFCC5282DC47E49BD3C1A8 /* ip */,
+				7AE4EF67F5894B44A4171A24 /* osc */,
+				84A8367B1A644E74BB03F50D /* OscArg.h */,
+				F672D09145DB428694A75467 /* OscBundle.h */,
+				F633C84281D34287B1DBB2B4 /* OscListener.h */,
+				DF5AD7B8D3C842949FEB93D4 /* OscMessage.h */,
+				02662FADDF6041F59EBCD72F /* OscSender.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		D045AFC0BB10424FA4609104 /* OSC */ = {
+			isa = PBXGroup;
+			children = (
+				42FA263CA78645E5A015880E /* src */,
+			);
+			name = OSC;
+			sourceTree = "<group>";
+		};
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				12F7D4C834224323A526FD23 /* ciUI */,
+				D045AFC0BB10424FA4609104 /* OSC */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				95DDB7562AFA4876A15C34A7 /* Resources.h */,
+				4E58CFA27BF24B0794BFAEE2 /* radome_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */,
+				8D1265B883AB436292689AE6 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* radome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "radome" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = radome;
+			productInstallPath = "$(HOME)/Applications";
+			productName = radome;
+			productReference = 8D1107320486CEB800E47090 /* radome.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "radome" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* radome */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* radome */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D5A5DA366F4018914ED8FF /* CinderApp.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F24D6B5F3AE4AFFBF494AB4 /* radomeApp.cpp in Sources */,
+				2105860075164B52A4ACD195 /* OscBundle.cpp in Sources */,
+				9507D402048A4F359D64B207 /* OscListener.cpp in Sources */,
+				89FD725DB7784991A9F0E1D9 /* OscMessage.cpp in Sources */,
+				2C93ECBE220243358E14E03A /* OscSender.cpp in Sources */,
+				7C076E17AB1A4771A5F45A76 /* IpEndpointName.cpp in Sources */,
+				CDE387679099432C88F5C7E8 /* OscOutboundPacketStream.cpp in Sources */,
+				A51B3FCFA8814DB280E68910 /* OscPrintReceivedElements.cpp in Sources */,
+				632B98B2C20A4A7F9E7E67D1 /* OscReceivedElements.cpp in Sources */,
+				8711E5BE6FB54304BD3EB800 /* OscTypes.cpp in Sources */,
+				17394D85E6F2406BBF31A786 /* NetworkingUtils.cpp in Sources */,
+				3A1EED814B304DA68CEB8678 /* UdpSocket.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = radome_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
+				PRODUCT_NAME = radome;
+				WRAPPER_EXTENSION = app;
+				SYMROOT = ./build;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = radome_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
+				PRODUCT_NAME = radome;
+				STRIP_INSTALLED_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+				SYMROOT = ./build;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = "../../cinder_master";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\" ../include",
+					../blocks/ciUI/src,
+					../blocks/OSC/src,
+				);
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = i386;
+				CINDER_PATH = "../../cinder_master";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/boost\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\" ../include",
+					../blocks/ciUI/src,
+					../blocks/OSC/src,
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "radome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "radome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
