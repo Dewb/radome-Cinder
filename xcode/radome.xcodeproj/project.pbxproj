@@ -21,7 +21,8 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		5B03AF6A17509B0F0090E4BA /* radome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6917509B0F0090E4BA /* radome.icns */; };
 		5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */; };
-		5B0947341749516600E68C5F /* radomeAppUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B0947321749516600E68C5F /* radomeAppUI.cpp */; };
+		5B03AF7217513DC00090E4BA /* cubeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7017513DC00090E4BA /* cubeMap.cpp */; };
+		5B03AF7617513DEF0090E4BA /* radomeAppUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */; };
 		5B094738174966F800E68C5F /* radomeGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094736174966F800E68C5F /* radomeGraphics.cpp */; };
 		5B09473B174967DF00E68C5F /* icosohedron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094739174967DF00E68C5F /* icosohedron.cpp */; };
 		5B09473E1749721200E68C5F /* radomeCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B09473C1749721200E68C5F /* radomeCamera.cpp */; };
@@ -76,9 +77,11 @@
 		5A8EF9AC1FAE482BAB5B4978 /* OscListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = OscListener.cpp; path = ../blocks/OSC/src/OscListener.cpp; sourceTree = "<group>"; };
 		5B03AF6917509B0F0090E4BA /* radome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = radome.icns; path = ../resources/radome.icns; sourceTree = "<group>"; };
 		5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-Regular.ttf"; path = "../resources/Exo-Regular.ttf"; sourceTree = "<group>"; };
-		5B0947321749516600E68C5F /* radomeAppUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = radomeAppUI.cpp; sourceTree = "<group>"; };
-		5B0947331749516600E68C5F /* radomeAppUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radomeAppUI.h; sourceTree = "<group>"; };
-		5B0947351749517700E68C5F /* radomeApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = radomeApp.h; sourceTree = "<group>"; };
+		5B03AF7017513DC00090E4BA /* cubeMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cubeMap.cpp; path = ../src/cubeMap.cpp; sourceTree = "<group>"; };
+		5B03AF7117513DC00090E4BA /* cubeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cubeMap.h; path = ../src/cubeMap.h; sourceTree = "<group>"; };
+		5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeAppUI.cpp; path = ../src/radomeAppUI.cpp; sourceTree = "<group>"; };
+		5B03AF7417513DEE0090E4BA /* radomeApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeApp.h; path = ../src/radomeApp.h; sourceTree = "<group>"; };
+		5B03AF7517513DEF0090E4BA /* radomeAppUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeAppUI.h; path = ../src/radomeAppUI.h; sourceTree = "<group>"; };
 		5B094736174966F800E68C5F /* radomeGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeGraphics.cpp; path = ../src/radomeGraphics.cpp; sourceTree = "<group>"; };
 		5B094737174966F800E68C5F /* radomeGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeGraphics.h; path = ../src/radomeGraphics.h; sourceTree = "<group>"; };
 		5B094739174967DF00E68C5F /* icosohedron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = icosohedron.cpp; path = ../src/icosohedron.cpp; sourceTree = "<group>"; };
@@ -161,12 +164,14 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1BD950E86031466D89D1F37D /* radomeApp.cpp */,
+				5B03AF7417513DEE0090E4BA /* radomeApp.h */,
+				5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */,
+				5B03AF7517513DEF0090E4BA /* radomeAppUI.h */,
+				5B03AF7017513DC00090E4BA /* cubeMap.cpp */,
+				5B03AF7117513DC00090E4BA /* cubeMap.h */,
 				5B094739174967DF00E68C5F /* icosohedron.cpp */,
 				5B09473A174967DF00E68C5F /* icosohedron.h */,
-				1BD950E86031466D89D1F37D /* radomeApp.cpp */,
-				5B0947351749517700E68C5F /* radomeApp.h */,
-				5B0947321749516600E68C5F /* radomeAppUI.cpp */,
-				5B0947331749516600E68C5F /* radomeAppUI.h */,
 				5B094736174966F800E68C5F /* radomeGraphics.cpp */,
 				5B094737174966F800E68C5F /* radomeGraphics.h */,
 				5B09473C1749721200E68C5F /* radomeCamera.cpp */,
@@ -442,10 +447,11 @@
 				8711E5BE6FB54304BD3EB800 /* OscTypes.cpp in Sources */,
 				17394D85E6F2406BBF31A786 /* NetworkingUtils.cpp in Sources */,
 				3A1EED814B304DA68CEB8678 /* UdpSocket.cpp in Sources */,
-				5B0947341749516600E68C5F /* radomeAppUI.cpp in Sources */,
 				5B094738174966F800E68C5F /* radomeGraphics.cpp in Sources */,
 				5B09473B174967DF00E68C5F /* icosohedron.cpp in Sources */,
 				5B09473E1749721200E68C5F /* radomeCamera.cpp in Sources */,
+				5B03AF7217513DC00090E4BA /* cubeMap.cpp in Sources */,
+				5B03AF7617513DEF0090E4BA /* radomeAppUI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

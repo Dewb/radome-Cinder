@@ -10,14 +10,20 @@
 #define __radome__radomeGraphics__
 
 class radomeCamera;
+class CubeMap;
 
 class radomeGraphics
 {
 public:
+    radomeGraphics();
+    ~radomeGraphics();
+    
     void setCamera(radomeCamera* pCamera);
     void initializeDomeGeometry(int radius, int height);
     void display3DScene();
     void displayDomePreview();
+    void displayCubeMap();
+    
 protected:
     void internalDrawScene();
     void internalDrawDome();
@@ -26,6 +32,8 @@ protected:
     int _domeDrawListIndex;
     float _domeRadius;
     float _domeHeight;
+    
+    CubeMap* _pCubeMap;
     
     radomeCamera* _pCamera;
 };

@@ -9,11 +9,23 @@
 #include "radomeGraphics.h"
 #include "icosohedron.h"
 #include "radomeCamera.h"
+#include "CubeMap.h"
 
 #include "cinder/gl/gl.h"
 
 using namespace ci;
 using namespace std;
+
+radomeGraphics::radomeGraphics()
+{
+    _pCubeMap = new CubeMap();
+}
+
+radomeGraphics::~radomeGraphics()
+{
+    if (_pCubeMap)
+        delete _pCubeMap;
+}
 
 void radomeGraphics::setCamera(radomeCamera* pCamera)
 {
@@ -125,23 +137,25 @@ void radomeGraphics::internalDrawGroundPlane() {
     }
 }
 
-
-/*
-void displayCubeMap()
+void radomeGraphics::displayCubeMap()
 {
-    ofSetColor(200,220,255);
+    gl::clear(Color( 0, 0, 0 ));
+
+    int SIDEBAR_WIDTH = 180; //todo: fix this
+    gl::color(Color(0.78, 0.86, 1.0));
     int margin = 2;
-    int w = (ofGetWindowWidth() - SIDEBAR_WIDTH - margin*4) / 3;
-    int h = (ofGetWindowHeight() - margin*3) / 2;
+    int w = (getWindowWidth() - SIDEBAR_WIDTH - margin * 4) / 3;
+    int h = (getWindowHeight() - margin * 3) / 2;
     for (int i = 0; i < 6; i++) {
-        int x = margin + i%3 * (w + margin) + SIDEBAR_WIDTH;
-        int y = margin + i/3 * (h + margin);
-        ofDrawBitmapString(_cubeMap.getDescriptiveStringForFace(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i), x+margin*1.5, y+10+margin*1.5);
-        _cubeMap.drawFace(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i , x, y, w, h);
-        ofRect(x-1, y-1, w + margin, h + margin);
+        int x = 2 * margin + i % 3 * (w + margin) + SIDEBAR_WIDTH;
+        int y = margin + i / 3 * (h + margin);
+        //gl::drawSolidRect(Rectf(x - 1, y - 1, x - 1 + w + margin, y - 1 + h + margin));
+        _pCubeMap->drawFace(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i , x, y, w, h);
+        gl::drawString(_pCubeMap->getDescriptiveStringForFace(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i),
+                       Vec2f(x + margin * 1.5, y + 10 + margin * 1.5));
     }
 }
-*/
+
 
 void radomeGraphics::displayDomePreview()
 {

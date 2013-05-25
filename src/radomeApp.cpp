@@ -28,6 +28,7 @@ void radomeApp::update()
 void radomeApp::draw()
 {
 	_gfx.display3DScene();
+    //_gfx.displayCubeMap();
     _ui.draw();
 }
 
