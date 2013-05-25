@@ -3,4 +3,4 @@
 	url = https://github.com/Dewb/ciUI
 [submodule "blocks/assimp"]
 	path = blocks/assimp
-	url = https://github.com/gaborpapp/Cinder-Assimp
+	url = https://github.com/Dewb/Cinder-Assimp
