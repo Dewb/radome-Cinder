@@ -20,18 +20,31 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+
 class radomeApp : public AppNative {
 public:
 	void setup();
 	void mouseDown( MouseEvent event );
 	void update();
 	void draw();
+    
+    vector<string> getDisplayModeNames();
+    void setDisplayMode(int modeIndex);
+    void cycleDisplayMode();
+    int getCurrentDisplayMode() { return _currentDisplayMode; }
+    
+    void keyDown(KeyEvent event);
+    
 protected:
     
     radomeAppUI _ui;
     radomeGraphics _gfx;
 
     turntableCamera _cam;
+
+    class DisplayMode;
+    vector<DisplayMode> _displayModes;
+    int _currentDisplayMode;
 };
 
 #endif

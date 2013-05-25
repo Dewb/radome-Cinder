@@ -38,6 +38,10 @@ public:
         if (_pCalibrationUI && _pCalibrationUI->isVisible())
             _pCalibrationUI->draw();
     }
+    
+    void onUIEvent(ciUIEvent* pEvent);
+    bool onKeyDown(KeyEvent event);
+
 protected:
     radomeApp* _pApp;
     ciUICanvas* _pUI;
@@ -68,6 +72,11 @@ void radomeAppUI::draw()
     _pImpl->draw();
 }
 
+void radomeAppUI::keyDown(KeyEvent event)
+{
+    _pImpl->onKeyDown(event);
+}
+
 void addProjectorWidgets(ciUICanvas* pUI, int index)
 {
     char buf[30];
@@ -95,22 +104,35 @@ void addRadioAndSetFirstItem(ciUICanvas* pUI, string id, vector<string> options,
     }
 }
 
+bool matchRadioButton(string widgetName, vector<string> names, int* pValue)
+{
+    for (int ii = 0; ii < names.size(); ii++) {
+        if (widgetName == names[ii]) {
+            if (pValue) {
+                *pValue = ii;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
 void radomeAppUIImpl::init(radomeApp* pApp)
 {
-    CI_UI_GLOBAL_PADDING = 3;
+    _pApp = pApp;
+
+    CI_UI_GLOBAL_PADDING = 3; // todo: solve this more cleanly in ciUI
     
     _pUI = new ciUICanvas(5, 0, SIDEBAR_WIDTH, pApp->getWindowHeight());
     _pUI->setWidgetSpacing(5.0);
     _pUI->setDrawBack(true);
-    
     _pUI->setFont(loadResource(EXO_REGULAR_TTF), "Exo-Regular", 24, 18, 14);
+    _pUI->registerUIEvents(this, &radomeAppUIImpl::onUIEvent);
+    
     _pUI->addWidgetDown(new ciUILabel("RADOME 0.3", CI_UI_FONT_LARGE));
     _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
-    _displayModeNames.push_back("3D Scene");
-    _displayModeNames.push_back("Cube Map");
-    _displayModeNames.push_back("Dome Preview");
-    _displayModeNames.push_back("Output Preview");
+    _displayModeNames = pApp->getDisplayModeNames();
     addRadioAndSetFirstItem(_pUI, "DISPLAY MODE", _displayModeNames, CI_UI_ORIENTATION_VERTICAL, 16, 16);
     _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
@@ -142,16 +164,154 @@ void radomeAppUIImpl::init(radomeApp* pApp)
     addRadioAndSetFirstItem(_pUI, "MAPPING MODE", _mappingModeNames, CI_UI_ORIENTATION_VERTICAL, 16, 16);
     _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
+    _pUI->autoSizeToFitWidgets();
+    _pUI->setVisible(true);
+
+    
     _pCalibrationUI = new ciUICanvas(SIDEBAR_WIDTH + 5, 0, CALIBRATIONUI_WIDTH, pApp->getWindowHeight());
     _pCalibrationUI->setWidgetSpacing(5.0);
     _pCalibrationUI->setDrawBack(true);
     _pCalibrationUI->setFont(loadResource(EXO_REGULAR_TTF), "Exo-Regular", 24, 18, 14);
+    _pCalibrationUI->autoSizeToFitWidgets();
+    _pCalibrationUI->registerUIEvents(this, &radomeAppUIImpl::onUIEvent);
+
     _pCalibrationUI->addWidgetDown(new ciUILabel("CALIBRATION", CI_UI_FONT_MEDIUM));
     _pCalibrationUI->addWidgetDown(new ciUISpacer(0, 10));
     for (int ii=0; ii<3; ii++) {
         addProjectorWidgets(_pCalibrationUI, ii);
     }
+    
+    _pCalibrationUI->autoSizeToFitWidgets();
     _pCalibrationUI->setVisible(false);
-
+    
 }
+
+void radomeAppUIImpl::onUIEvent(ciUIEvent* pEvent)
+{
+    auto widget = pEvent->widget;
+    string name = widget->getName();
+        
+    int radio;
+    if(matchRadioButton(name, _displayModeNames, &radio))
+    {
+        _pApp->setDisplayMode(radio);
+        return;
+    }
+    
+    if (matchRadioButton(name, _mixModeNames, &radio))
+    {
+        //_pApp->setMixMode(radio);
+        return;
+    }
+    if (matchRadioButton(name, _mappingModeNames, &radio))
+    {
+        //_pApp->setMappingMode(radio);
+        return;
+    }
+    
+    if (name == "XFADE") {
+        auto slider = dynamic_cast<ciUISlider*>(widget);
+        if (slider) {
+            //_vidOverlay.setFaderValue(slider->getValue());
+        }
+    } else if (name == "Add 3D Model...") {
+        auto pButton = dynamic_cast<ciUIButton*>(widget);
+        if (pButton && !pButton->getValue())
+        {
+            //loadFile();
+        }
+    } else if (name == "Show Window") {
+        auto pButton = dynamic_cast<ciUIButton*>(widget);
+        if (pButton && !pButton->getValue())
+        {
+            //showProjectorWindow();
+        }
+    } else if (name == "Calibrate...") {
+        auto pButton = dynamic_cast<ciUIButton*>(widget);
+        if (pButton && !pButton->getValue())
+        {
+            if (_pCalibrationUI) {
+                bool bVis = _pCalibrationUI->isVisible();
+                _pCalibrationUI->setVisible(!bVis);
+            }
+        }
+    }
+}
+
+bool radomeAppUIImpl::onKeyDown(KeyEvent event)
+{
+    //float accel = 3.0;
+    //auto model = *(_modelList.rbegin());
+    
+    switch (event.getChar())
+    {
+//        case 'w': if (model) model->_origin.y += accel; break;
+//        case 's': if (model) model->_origin.y -= accel; break;
+//        case 'a': if (model) model->_origin.x -= accel; break;
+//        case 'd': if (model) model->_origin.x += accel; break;
+//        case 'z': if (model) model->_origin.z += accel; break;
+//        case 'x': if (model) model->_origin.z -= accel; break;
+//        case 'W': if (model) model->_origin.y += accel * 4; break;
+//        case 'S': if (model) model->_origin.y -= accel * 4; break;
+//        case 'A': if (model) model->_origin.x -= accel * 4; break;
+//        case 'D': if (model) model->_origin.x += accel * 4; break;
+//        case 'Z': if (model) model->_origin.z += accel * 4; break;
+//        case 'X': if (model) model->_origin.z -= accel * 4; break;
+//        case 'l': loadFile(); break;
+        case 'm':
+        {
+            _pApp->cycleDisplayMode();
+            auto radio = dynamic_cast<ciUIRadio*>(_pUI->getWidget("DISPLAY MODE"));
+            if (radio) {
+                radio->activateToggle(_displayModeNames[_pApp->getCurrentDisplayMode()]);
+            }            
+        }
+            break;
+        case 'f':
+        {
+            //_fullscreen = !_fullscreen;
+            //ofSetFullscreen(_fullscreen);
+        }
+            break;
+        case 'p':
+        {
+            //showProjectorWindow();
+        }
+            break;
+        case 'c':
+        {
+            if (_pCalibrationUI)
+                _pCalibrationUI->setVisible(!_pCalibrationUI->isVisible());
+        }
+            break;
+        case 'C':
+        {
+//            if (_modelList.size() > 0)
+//            {
+//                auto m = _modelList.back();
+//                _modelList.pop_back();
+//                if (m) delete(m);
+//            }
+        }
+            break;
+        case 'r':
+        {
+//            if (model) {
+//                if (model->getRotationIncrement() == 0) {
+//                    model->setRotationOrigin(model->getOrigin());
+//                    model->setRotation(ofVec4f(0.0,
+//                                               frand_bounded(),
+//                                               frand_bounded(),
+//                                               frand_bounded()));
+//                }
+//                model->setRotationIncrement(model->getRotationIncrement() + 2.0);
+//                if (model->getRotationIncrement() == 10.0) {
+//                    model->setRotationIncrement(0.0);
+//                }
+//            }
+        }
+            break;
+    }
+}
+
 
