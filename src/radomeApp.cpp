@@ -1,20 +1,17 @@
-#include "cinder/app/AppNative.h"
-#include "cinder/gl/gl.h"
 
-using namespace ci;
-using namespace ci::app;
-using namespace std;
+#include "radomeApp.h"
 
-class radomeApp : public AppNative {
-  public:
-	void setup();
-	void mouseDown( MouseEvent event );	
-	void update();
-	void draw();
-};
 
 void radomeApp::setup()
 {
+    _ui.init(this);
+    _cam.setCenterOfInterestPoint(Vec3f(0, 0, 0));
+    _cam.setAspectRatio(getWindowWidth()/getWindowHeight());
+    _cam.connectMouseEvents();
+
+    _gfx.setCamera(&_cam);
+    _gfx.initializeDomeGeometry(150, 110);
+
 }
 
 void radomeApp::mouseDown( MouseEvent event )
@@ -23,12 +20,15 @@ void radomeApp::mouseDown( MouseEvent event )
 
 void radomeApp::update()
 {
+    _cam.updateWindowSize(getWindowWidth(), getWindowHeight());
+    
+    _ui.update();
 }
 
 void radomeApp::draw()
 {
-	// clear out the window with black
-	gl::clear( Color( 0, 0, 0 ) ); 
+	_gfx.display3DScene();
+    _ui.draw();
 }
 
 CINDER_APP_NATIVE( radomeApp, RendererGl )
