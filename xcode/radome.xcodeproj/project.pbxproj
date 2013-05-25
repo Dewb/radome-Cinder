@@ -23,6 +23,17 @@
 		5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */; };
 		5B03AF7217513DC00090E4BA /* cubeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7017513DC00090E4BA /* cubeMap.cpp */; };
 		5B03AF7617513DEF0090E4BA /* radomeAppUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */; };
+		5B03B02E175155660090E4BA /* color4.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AFEE175155660090E4BA /* color4.inl */; };
+		5B03B02F175155660090E4BA /* material.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AFFE175155660090E4BA /* material.inl */; };
+		5B03B030175155660090E4BA /* matrix3x3.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B000175155660090E4BA /* matrix3x3.inl */; };
+		5B03B031175155660090E4BA /* matrix4x4.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B002175155660090E4BA /* matrix4x4.inl */; };
+		5B03B032175155660090E4BA /* quaternion.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B008175155660090E4BA /* quaternion.inl */; };
+		5B03B033175155660090E4BA /* vector2.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B00D175155660090E4BA /* vector2.inl */; };
+		5B03B034175155660090E4BA /* vector3.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B00F175155660090E4BA /* vector3.inl */; };
+		5B03B035175155660090E4BA /* AssimpLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B011175155660090E4BA /* AssimpLoader.cpp */; };
+		5B03B036175155660090E4BA /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B014175155660090E4BA /* Node.cpp */; };
+		5B03B03F175155D20090E4BA /* radomeModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B03D175155D20090E4BA /* radomeModel.cpp */; };
+		5B03B04117515E310090E4BA /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B03B04017515E310090E4BA /* libassimp.a */; };
 		5B094738174966F800E68C5F /* radomeGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094736174966F800E68C5F /* radomeGraphics.cpp */; };
 		5B09473B174967DF00E68C5F /* icosohedron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094739174967DF00E68C5F /* icosohedron.cpp */; };
 		5B09473E1749721200E68C5F /* radomeCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B09473C1749721200E68C5F /* radomeCamera.cpp */; };
@@ -82,6 +93,55 @@
 		5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeAppUI.cpp; path = ../src/radomeAppUI.cpp; sourceTree = "<group>"; };
 		5B03AF7417513DEE0090E4BA /* radomeApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeApp.h; path = ../src/radomeApp.h; sourceTree = "<group>"; };
 		5B03AF7517513DEF0090E4BA /* radomeAppUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeAppUI.h; path = ../src/radomeAppUI.h; sourceTree = "<group>"; };
+		5B03AFE7175155660090E4BA /* ai_assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ai_assert.h; sourceTree = "<group>"; };
+		5B03AFE8175155660090E4BA /* anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = anim.h; sourceTree = "<group>"; };
+		5B03AFE9175155660090E4BA /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		5B03AFEA175155660090E4BA /* cexport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cexport.h; sourceTree = "<group>"; };
+		5B03AFEB175155660090E4BA /* cfileio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cfileio.h; sourceTree = "<group>"; };
+		5B03AFEC175155660090E4BA /* cimport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cimport.h; sourceTree = "<group>"; };
+		5B03AFED175155660090E4BA /* color4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = color4.h; sourceTree = "<group>"; };
+		5B03AFEE175155660090E4BA /* color4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = color4.inl; sourceTree = "<group>"; };
+		5B03AFF0175155660090E4BA /* poppack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poppack1.h; sourceTree = "<group>"; };
+		5B03AFF1175155660090E4BA /* pushpack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pushpack1.h; sourceTree = "<group>"; };
+		5B03AFF2175155660090E4BA /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		5B03AFF3175155660090E4BA /* DefaultLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DefaultLogger.hpp; sourceTree = "<group>"; };
+		5B03AFF4175155660090E4BA /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		5B03AFF5175155660090E4BA /* Exporter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Exporter.hpp; sourceTree = "<group>"; };
+		5B03AFF6175155660090E4BA /* Importer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Importer.hpp; sourceTree = "<group>"; };
+		5B03AFF7175155660090E4BA /* importerdesc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = importerdesc.h; sourceTree = "<group>"; };
+		5B03AFF8175155660090E4BA /* IOStream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOStream.hpp; sourceTree = "<group>"; };
+		5B03AFF9175155660090E4BA /* IOSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOSystem.hpp; sourceTree = "<group>"; };
+		5B03AFFA175155660090E4BA /* light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = light.h; sourceTree = "<group>"; };
+		5B03AFFB175155660090E4BA /* Logger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Logger.hpp; sourceTree = "<group>"; };
+		5B03AFFC175155660090E4BA /* LogStream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LogStream.hpp; sourceTree = "<group>"; };
+		5B03AFFD175155660090E4BA /* material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
+		5B03AFFE175155660090E4BA /* material.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = material.inl; sourceTree = "<group>"; };
+		5B03AFFF175155660090E4BA /* matrix3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix3x3.h; sourceTree = "<group>"; };
+		5B03B000175155660090E4BA /* matrix3x3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix3x3.inl; sourceTree = "<group>"; };
+		5B03B001175155660090E4BA /* matrix4x4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix4x4.h; sourceTree = "<group>"; };
+		5B03B002175155660090E4BA /* matrix4x4.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = matrix4x4.inl; sourceTree = "<group>"; };
+		5B03B003175155660090E4BA /* mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
+		5B03B004175155660090E4BA /* NullLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NullLogger.hpp; sourceTree = "<group>"; };
+		5B03B005175155660090E4BA /* postprocess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = postprocess.h; sourceTree = "<group>"; };
+		5B03B006175155660090E4BA /* ProgressHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProgressHandler.hpp; sourceTree = "<group>"; };
+		5B03B007175155660090E4BA /* quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quaternion.h; sourceTree = "<group>"; };
+		5B03B008175155660090E4BA /* quaternion.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quaternion.inl; sourceTree = "<group>"; };
+		5B03B009175155660090E4BA /* scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene.h; sourceTree = "<group>"; };
+		5B03B00A175155660090E4BA /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
+		5B03B00B175155660090E4BA /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		5B03B00C175155660090E4BA /* vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
+		5B03B00D175155660090E4BA /* vector2.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vector2.inl; sourceTree = "<group>"; };
+		5B03B00E175155660090E4BA /* vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector3.h; sourceTree = "<group>"; };
+		5B03B00F175155660090E4BA /* vector3.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vector3.inl; sourceTree = "<group>"; };
+		5B03B010175155660090E4BA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		5B03B011175155660090E4BA /* AssimpLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssimpLoader.cpp; sourceTree = "<group>"; };
+		5B03B012175155660090E4BA /* AssimpLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssimpLoader.h; sourceTree = "<group>"; };
+		5B03B013175155660090E4BA /* AssimpMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssimpMesh.h; sourceTree = "<group>"; };
+		5B03B014175155660090E4BA /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		5B03B015175155660090E4BA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		5B03B03D175155D20090E4BA /* radomeModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeModel.cpp; path = ../src/radomeModel.cpp; sourceTree = "<group>"; };
+		5B03B03E175155D20090E4BA /* radomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeModel.h; path = ../src/radomeModel.h; sourceTree = "<group>"; };
+		5B03B04017515E310090E4BA /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = ../blocks/assimp/lib/macosx/libassimp.a; sourceTree = "<group>"; };
 		5B094736174966F800E68C5F /* radomeGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeGraphics.cpp; path = ../src/radomeGraphics.cpp; sourceTree = "<group>"; };
 		5B094737174966F800E68C5F /* radomeGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeGraphics.h; path = ../src/radomeGraphics.h; sourceTree = "<group>"; };
 		5B094739174967DF00E68C5F /* icosohedron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = icosohedron.cpp; path = ../src/icosohedron.cpp; sourceTree = "<group>"; };
@@ -138,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B03B04117515E310090E4BA /* libassimp.a in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
 				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
@@ -155,6 +216,7 @@
 		01B97315FEAEA392516A2CEA /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				5B03AFB1175155660090E4BA /* assimp */,
 				12F7D4C834224323A526FD23 /* ciUI */,
 				D045AFC0BB10424FA4609104 /* OSC */,
 			);
@@ -176,6 +238,8 @@
 				5B094737174966F800E68C5F /* radomeGraphics.h */,
 				5B09473C1749721200E68C5F /* radomeCamera.cpp */,
 				5B09473D1749721200E68C5F /* radomeCamera.h */,
+				5B03B03D175155D20090E4BA /* radomeModel.cpp */,
+				5B03B03E175155D20090E4BA /* radomeModel.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -223,6 +287,7 @@
 		29B97314FDCFA39411CA2CEA /* radome */ = {
 			isa = PBXGroup;
 			children = (
+				5B03B04017515E310090E4BA /* libassimp.a */,
 				01B97315FEAEA392516A2CEA /* Blocks */,
 				29B97315FDCFA39411CA2CEA /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
@@ -337,6 +402,84 @@
 			name = ip;
 			sourceTree = "<group>";
 		};
+		5B03AFB1175155660090E4BA /* assimp */ = {
+			isa = PBXGroup;
+			children = (
+				5B03AFE5175155660090E4BA /* src */,
+			);
+			name = assimp;
+			path = ../blocks/assimp;
+			sourceTree = "<group>";
+		};
+		5B03AFE5175155660090E4BA /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5B03AFE6175155660090E4BA /* assimp */,
+				5B03B011175155660090E4BA /* AssimpLoader.cpp */,
+				5B03B012175155660090E4BA /* AssimpLoader.h */,
+				5B03B013175155660090E4BA /* AssimpMesh.h */,
+				5B03B014175155660090E4BA /* Node.cpp */,
+				5B03B015175155660090E4BA /* Node.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5B03AFE6175155660090E4BA /* assimp */ = {
+			isa = PBXGroup;
+			children = (
+				5B03AFE7175155660090E4BA /* ai_assert.h */,
+				5B03AFE8175155660090E4BA /* anim.h */,
+				5B03AFE9175155660090E4BA /* camera.h */,
+				5B03AFEA175155660090E4BA /* cexport.h */,
+				5B03AFEB175155660090E4BA /* cfileio.h */,
+				5B03AFEC175155660090E4BA /* cimport.h */,
+				5B03AFED175155660090E4BA /* color4.h */,
+				5B03AFEE175155660090E4BA /* color4.inl */,
+				5B03AFEF175155660090E4BA /* Compiler */,
+				5B03AFF2175155660090E4BA /* config.h */,
+				5B03AFF3175155660090E4BA /* DefaultLogger.hpp */,
+				5B03AFF4175155660090E4BA /* defs.h */,
+				5B03AFF5175155660090E4BA /* Exporter.hpp */,
+				5B03AFF6175155660090E4BA /* Importer.hpp */,
+				5B03AFF7175155660090E4BA /* importerdesc.h */,
+				5B03AFF8175155660090E4BA /* IOStream.hpp */,
+				5B03AFF9175155660090E4BA /* IOSystem.hpp */,
+				5B03AFFA175155660090E4BA /* light.h */,
+				5B03AFFB175155660090E4BA /* Logger.hpp */,
+				5B03AFFC175155660090E4BA /* LogStream.hpp */,
+				5B03AFFD175155660090E4BA /* material.h */,
+				5B03AFFE175155660090E4BA /* material.inl */,
+				5B03AFFF175155660090E4BA /* matrix3x3.h */,
+				5B03B000175155660090E4BA /* matrix3x3.inl */,
+				5B03B001175155660090E4BA /* matrix4x4.h */,
+				5B03B002175155660090E4BA /* matrix4x4.inl */,
+				5B03B003175155660090E4BA /* mesh.h */,
+				5B03B004175155660090E4BA /* NullLogger.hpp */,
+				5B03B005175155660090E4BA /* postprocess.h */,
+				5B03B006175155660090E4BA /* ProgressHandler.hpp */,
+				5B03B007175155660090E4BA /* quaternion.h */,
+				5B03B008175155660090E4BA /* quaternion.inl */,
+				5B03B009175155660090E4BA /* scene.h */,
+				5B03B00A175155660090E4BA /* texture.h */,
+				5B03B00B175155660090E4BA /* types.h */,
+				5B03B00C175155660090E4BA /* vector2.h */,
+				5B03B00D175155660090E4BA /* vector2.inl */,
+				5B03B00E175155660090E4BA /* vector3.h */,
+				5B03B00F175155660090E4BA /* vector3.inl */,
+				5B03B010175155660090E4BA /* version.h */,
+			);
+			path = assimp;
+			sourceTree = "<group>";
+		};
+		5B03AFEF175155660090E4BA /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				5B03AFF0175155660090E4BA /* poppack1.h */,
+				5B03AFF1175155660090E4BA /* pushpack1.h */,
+			);
+			path = Compiler;
+			sourceTree = "<group>";
+		};
 		7AE4EF67F5894B44A4171A24 /* osc */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +568,13 @@
 			files = (
 				5B03AF6A17509B0F0090E4BA /* radome.icns in Resources */,
 				5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */,
+				5B03B02E175155660090E4BA /* color4.inl in Resources */,
+				5B03B02F175155660090E4BA /* material.inl in Resources */,
+				5B03B030175155660090E4BA /* matrix3x3.inl in Resources */,
+				5B03B031175155660090E4BA /* matrix4x4.inl in Resources */,
+				5B03B032175155660090E4BA /* quaternion.inl in Resources */,
+				5B03B033175155660090E4BA /* vector2.inl in Resources */,
+				5B03B034175155660090E4BA /* vector3.inl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +602,9 @@
 				5B09473E1749721200E68C5F /* radomeCamera.cpp in Sources */,
 				5B03AF7217513DC00090E4BA /* cubeMap.cpp in Sources */,
 				5B03AF7617513DEF0090E4BA /* radomeAppUI.cpp in Sources */,
+				5B03B035175155660090E4BA /* AssimpLoader.cpp in Sources */,
+				5B03B036175155660090E4BA /* Node.cpp in Sources */,
+				5B03B03F175155D20090E4BA /* radomeModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,9 +629,14 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../blocks/assimp/lib/macosx\"",
+				);
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
 				PRODUCT_NAME = radome;
 				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../blocks/ciUI/src ../blocks/OSC/src ../blocks/assimp/src";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -498,10 +656,15 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../blocks/assimp/lib/macosx\"",
+				);
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
 				PRODUCT_NAME = radome;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../blocks/ciUI/src ../blocks/OSC/src ../blocks/assimp/src";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

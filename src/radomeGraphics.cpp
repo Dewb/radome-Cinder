@@ -9,6 +9,7 @@
 #include "radomeGraphics.h"
 #include "icosohedron.h"
 #include "radomeCamera.h"
+#include "radomeModel.h"
 #include "CubeMap.h"
 
 #include "cinder/gl/gl.h"
@@ -70,6 +71,13 @@ void radomeGraphics::initializeDomeGeometry(int radius, int height)
     glEndList();
 }
 
+void radomeGraphics::update()
+{
+    for (auto model : _modelList) {
+        model->update();
+    }
+}
+
 void radomeGraphics::display3DScene()
 {
     if (!_pCamera)
@@ -77,6 +85,8 @@ void radomeGraphics::display3DScene()
     
 	gl::clear(Color( 0, 0, 0 ));
     gl::enableAlphaBlending();
+    gl::enableDepthRead();
+    gl::enableDepthWrite();
     
     _pCamera->setDistance(_domeRadius * 4.3);
     _pCamera->begin();
@@ -100,12 +110,10 @@ void radomeGraphics::display3DScene()
 
 void radomeGraphics::internalDrawScene()
 {
-    /*
-    for (auto iter = _modelList.begin(); iter != _modelList.end(); ++iter)
+    for (auto model : _modelList)
     {
-        (*iter)->draw();
+        model->draw();
     }
-    */
 }
 
 void radomeGraphics::internalDrawDome()
@@ -198,3 +206,12 @@ void displayProjectorOutput()
     }
 }
 */
+
+void radomeGraphics::loadModel(fs::path filePath)
+{
+    if (filePath.empty())
+        return;
+    
+    auto model = new radomeModel(filePath);
+    _modelList.push_back(model);
+}

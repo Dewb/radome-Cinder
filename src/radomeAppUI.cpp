@@ -40,7 +40,7 @@ public:
     }
     
     void onUIEvent(ciUIEvent* pEvent);
-    bool onKeyDown(KeyEvent event);
+    void onKeyDown(KeyEvent event);
 
 protected:
     radomeApp* _pApp;
@@ -218,7 +218,7 @@ void radomeAppUIImpl::onUIEvent(ciUIEvent* pEvent)
         auto pButton = dynamic_cast<ciUIButton*>(widget);
         if (pButton && !pButton->getValue())
         {
-            //loadFile();
+            _pApp->browseForModel();
         }
     } else if (name == "Show Window") {
         auto pButton = dynamic_cast<ciUIButton*>(widget);
@@ -238,7 +238,7 @@ void radomeAppUIImpl::onUIEvent(ciUIEvent* pEvent)
     }
 }
 
-bool radomeAppUIImpl::onKeyDown(KeyEvent event)
+void radomeAppUIImpl::onKeyDown(KeyEvent event)
 {
     //float accel = 3.0;
     //auto model = *(_modelList.rbegin());
@@ -257,7 +257,11 @@ bool radomeAppUIImpl::onKeyDown(KeyEvent event)
 //        case 'D': if (model) model->_origin.x += accel * 4; break;
 //        case 'Z': if (model) model->_origin.z += accel * 4; break;
 //        case 'X': if (model) model->_origin.z -= accel * 4; break;
-//        case 'l': loadFile(); break;
+        case 'l':
+        {
+            _pApp->browseForModel();
+            break;
+        }
         case 'm':
         {
             _pApp->cycleDisplayMode();
@@ -312,6 +316,7 @@ bool radomeAppUIImpl::onKeyDown(KeyEvent event)
         }
             break;
     }
+    
 }
 
 

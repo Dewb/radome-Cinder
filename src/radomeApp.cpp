@@ -42,6 +42,7 @@ void radomeApp::update()
 {
     _cam.updateWindowSize(getWindowWidth(), getWindowHeight());
     
+    _gfx.update();    
     _ui.update();
 }
 
@@ -73,4 +74,18 @@ vector<string> radomeApp::getDisplayModeNames()
     }
     return names;
 }
+
+void radomeApp::browseForModel()
+{
+    auto path = getOpenFilePath();
+    if (path.empty())
+        return;
+
+    _gfx.loadModel(path);
+}
+
+
 CINDER_APP_NATIVE( radomeApp, RendererGl )
+
+
+

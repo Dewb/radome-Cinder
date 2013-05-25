@@ -10,7 +10,11 @@
 #define __radome__radomeGraphics__
 
 class radomeCamera;
+class radomeModel;
 class CubeMap;
+
+using namespace ci;
+using namespace std;
 
 class radomeGraphics
 {
@@ -20,9 +24,14 @@ public:
     
     void setCamera(radomeCamera* pCamera);
     void initializeDomeGeometry(int radius, int height);
+    
+    void update();
+    
     void display3DScene();
     void displayDomePreview();
     void displayCubeMap();
+    
+    void loadModel(fs::path filepath);
     
 protected:
     void internalDrawScene();
@@ -36,6 +45,8 @@ protected:
     CubeMap* _pCubeMap;
     
     radomeCamera* _pCamera;
+    
+    list<radomeModel*> _modelList;
 };
 
 #endif /* defined(__radome__radomeGraphics__) */

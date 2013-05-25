@@ -35,6 +35,8 @@ public:
     
     void keyDown(KeyEvent event);
     
+    void browseForModel();
+    
 protected:
     
     radomeAppUI _ui;
@@ -45,6 +47,7 @@ protected:
     class DisplayMode;
     vector<DisplayMode> _displayModes;
     int _currentDisplayMode;
+    
 };
 
 #endif
