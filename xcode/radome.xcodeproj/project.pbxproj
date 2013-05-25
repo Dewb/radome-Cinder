@@ -12,7 +12,6 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		00D5A5DA366F4018914ED8FF /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */; };
 		17394D85E6F2406BBF31A786 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F774EBBE647C9A33C02B4 /* NetworkingUtils.cpp */; };
 		1F24D6B5F3AE4AFFBF494AB4 /* radomeApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD950E86031466D89D1F37D /* radomeApp.cpp */; };
 		2105860075164B52A4ACD195 /* OscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08B40423FDC341A6BE6D5336 /* OscBundle.cpp */; };
@@ -20,6 +19,8 @@
 		3A1EED814B304DA68CEB8678 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBA71EDFC81A438E96F13131 /* UdpSocket.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		5B03AF6A17509B0F0090E4BA /* radome.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6917509B0F0090E4BA /* radome.icns */; };
+		5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */; };
 		5B0947341749516600E68C5F /* radomeAppUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B0947321749516600E68C5F /* radomeAppUI.cpp */; };
 		5B094738174966F800E68C5F /* radomeGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094736174966F800E68C5F /* radomeGraphics.cpp */; };
 		5B09473B174967DF00E68C5F /* icosohedron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094739174967DF00E68C5F /* icosohedron.cpp */; };
@@ -73,6 +74,8 @@
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		5A8EF9AC1FAE482BAB5B4978 /* OscListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = OscListener.cpp; path = ../blocks/OSC/src/OscListener.cpp; sourceTree = "<group>"; };
+		5B03AF6917509B0F0090E4BA /* radome.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = radome.icns; path = ../resources/radome.icns; sourceTree = "<group>"; };
+		5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo-Regular.ttf"; path = "../resources/Exo-Regular.ttf"; sourceTree = "<group>"; };
 		5B0947321749516600E68C5F /* radomeAppUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = radomeAppUI.cpp; sourceTree = "<group>"; };
 		5B0947331749516600E68C5F /* radomeAppUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radomeAppUI.h; sourceTree = "<group>"; };
 		5B0947351749517700E68C5F /* radomeApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = radomeApp.h; sourceTree = "<group>"; };
@@ -106,7 +109,6 @@
 		A82A23642E564912BC49AE05 /* ciUICanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ciUICanvas.h; path = ../blocks/ciUI/src/ciUICanvas.h; sourceTree = "<group>"; };
 		B82FC84FCC194EF69EE9B490 /* ciUIRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ciUIRectangle.h; path = ../blocks/ciUI/src/ciUIRectangle.h; sourceTree = "<group>"; };
 		BF0ADE9ED26741F594A7A962 /* ciUISpacer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ciUISpacer.h; path = ../blocks/ciUI/src/ciUISpacer.h; sourceTree = "<group>"; };
-		C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		C646C04FAA23449E8DBBC388 /* ciUIRotarySlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ciUIRotarySlider.h; path = ../blocks/ciUI/src/ciUIRotarySlider.h; sourceTree = "<group>"; };
 		C6B11DB6804346628716A719 /* ciUIBiLabelSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ciUIBiLabelSlider.h; path = ../blocks/ciUI/src/ciUIBiLabelSlider.h; sourceTree = "<group>"; };
 		C9CEF6103912449599C78CF9 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MessageMappingOscPacketListener.h; path = ../blocks/OSC/src/osc/MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
@@ -238,7 +240,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C0C812E266FC4C3BBDF3E36A /* CinderApp.icns */,
+				5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */,
+				5B03AF6917509B0F0090E4BA /* radome.icns */,
 				8D1265B883AB436292689AE6 /* Info.plist */,
 			);
 			name = Resources;
@@ -415,7 +418,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D5A5DA366F4018914ED8FF /* CinderApp.icns in Resources */,
+				5B03AF6A17509B0F0090E4BA /* radome.icns in Resources */,
+				5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

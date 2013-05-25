@@ -9,6 +9,7 @@
 #include "radomeAppUI.h"
 #include "radomeApp.h"
 #include "ciUI.h"
+#include "Resources.h"
 
 #define SIDEBAR_WIDTH 180
 #define CALIBRATIONUI_WIDTH 210
@@ -96,40 +97,42 @@ void addRadioAndSetFirstItem(ciUICanvas* pUI, string id, vector<string> options,
 
 void radomeAppUIImpl::init(radomeApp* pApp)
 {
+    CI_UI_GLOBAL_PADDING = 3;
+    
     _pUI = new ciUICanvas(5, 0, SIDEBAR_WIDTH, pApp->getWindowHeight());
     _pUI->setWidgetSpacing(5.0);
     _pUI->setDrawBack(true);
     
-    //_pUI->setFont("GUI/Exo-Regular.ttf");
+    _pUI->setFont(loadResource(EXO_REGULAR_TTF), "Exo-Regular", 24, 18, 14);
     _pUI->addWidgetDown(new ciUILabel("RADOME 0.3", CI_UI_FONT_LARGE));
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
     _displayModeNames.push_back("3D Scene");
     _displayModeNames.push_back("Cube Map");
     _displayModeNames.push_back("Dome Preview");
     _displayModeNames.push_back("Output Preview");
     addRadioAndSetFirstItem(_pUI, "DISPLAY MODE", _displayModeNames, CI_UI_ORIENTATION_VERTICAL, 16, 16);
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
     _pUI->addWidgetDown(new ciUILabel("PROJECTORS", CI_UI_FONT_MEDIUM));
     _pUI->addWidgetDown(new ciUILabelButton(false, "Calibrate...", CI_UI_FONT_SMALL));
     _pUI->addWidgetDown(new ciUILabelButton(false, "Show Window", CI_UI_FONT_SMALL));
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
-    
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
+
     _pUI->addWidgetDown(new ciUILabel("CONTENT", CI_UI_FONT_MEDIUM));
     _pUI->addWidgetDown(new ciUILabelButton(false, "Add 3D Model...", CI_UI_FONT_SMALL));
     _pUI->addWidgetDown(new ciUILabelButton(false, "2D Input...", CI_UI_FONT_SMALL));
     _pUI->addWidgetDown(new ciUILabelButton(false, "Plugins...", CI_UI_FONT_SMALL));
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
     _pUI->addWidgetDown(new ciUILabel("MIXER", CI_UI_FONT_MEDIUM));
-    //_pUI->addWidgetDown(new ciUIBiLabelSlider(0, 0, SIDEBAR_WIDTH-10, 30, 0, 100, _vidOverlay.getFaderValue()*100.0, "XFADE", "2D", "3D", CI_UI_FONT_MEDIUM));
+    _pUI->addWidgetDown(new ciUIBiLabelSlider(0, 0, SIDEBAR_WIDTH-10, 30, 0, 100, 850.0, "XFADE", "2D", "3D", CI_UI_FONT_MEDIUM));
     
     _mixModeNames.push_back("Underlay");
     _mixModeNames.push_back("Overlay");
     _mixModeNames.push_back("Mask");
     addRadioAndSetFirstItem(_pUI, "BLEND MODE", _mixModeNames, CI_UI_ORIENTATION_VERTICAL, 16, 16);
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
     _mappingModeNames.push_back("Lat/Long");
     _mappingModeNames.push_back("Quadrants");
@@ -137,14 +140,14 @@ void radomeAppUIImpl::init(radomeApp* pApp)
     _mappingModeNames.push_back("Geodesic");
     _mappingModeNames.push_back("Cinematic");
     addRadioAndSetFirstItem(_pUI, "MAPPING MODE", _mappingModeNames, CI_UI_ORIENTATION_VERTICAL, 16, 16);
-    _pUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pUI->addWidgetDown(new ciUISpacer(0, 10));
     
     _pCalibrationUI = new ciUICanvas(SIDEBAR_WIDTH + 5, 0, CALIBRATIONUI_WIDTH, pApp->getWindowHeight());
     _pCalibrationUI->setWidgetSpacing(5.0);
     _pCalibrationUI->setDrawBack(true);
-    //_pCalibrationUI->setFont("GUI/Exo-Regular.ttf");
+    _pCalibrationUI->setFont(loadResource(EXO_REGULAR_TTF), "Exo-Regular", 24, 18, 14);
     _pCalibrationUI->addWidgetDown(new ciUILabel("CALIBRATION", CI_UI_FONT_MEDIUM));
-    _pCalibrationUI->addWidgetDown(new ciUISpacer(0, 12));
+    _pCalibrationUI->addWidgetDown(new ciUISpacer(0, 10));
     for (int ii=0; ii<3; ii++) {
         addProjectorWidgets(_pCalibrationUI, ii);
     }

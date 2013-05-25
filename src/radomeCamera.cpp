@@ -51,6 +51,7 @@ turntableCamera::turntableCamera()
 , _phi(PI/2)
 {
     updateAngles();
+    setPerspective(60, 4/3.0, 5.0, 3000.0);
 }
 
 turntableCamera::~turntableCamera()

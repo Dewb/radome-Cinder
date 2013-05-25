@@ -1,7 +1,7 @@
 #pragma once
 #include "cinder/CinderResources.h"
 
-//#define RES_MY_RES			CINDER_RESOURCE( ../resources/, image_name.png, 128, IMAGE )
+#define EXO_REGULAR_TTF  CINDER_RESOURCE( ../resources/, Exo-Regular.ttf, 128, IMAGE )
 
 
 
