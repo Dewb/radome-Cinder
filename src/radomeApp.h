@@ -28,7 +28,9 @@ public:
 	void setup();
 	void mouseDown( MouseEvent event );
 	void update();
-	void draw();
+    
+	void drawMainWindow();
+	void drawProjWindow();
     
     vector<string> getDisplayModeNames();
     void setDisplayMode(int modeIndex);

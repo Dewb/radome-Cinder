@@ -13,19 +13,13 @@ public:
 
 void radomeApp::prepareSettings(Settings *pSettings)
 {
-    Window::Format defaultWindowFormat;
-    Window::Format projectorWindowFormat;
-    
     pSettings->prepareWindow(Window::Format().fullScreenButton());
-
-    RendererRef projectorRenderer(new RendererGl());
-    pSettings->prepareWindow(Window::Format().borderless().renderer(projectorRenderer));
 }
 
 void radomeApp::setup()
 {
-    getWindowIndex(1)->hide();
-    
+    getWindowIndex(0)->connectDraw(&radomeApp::drawMainWindow, this);
+        
     _cam.setCenterOfInterestPoint(Vec3f(0, 0, 0));
     _cam.setAspectRatio(getWindowWidth()/getWindowHeight());
     _cam.connectMouseEvents();
@@ -64,19 +58,16 @@ void radomeApp::update()
     }
 }
 
-void radomeApp::draw()
+void radomeApp::drawMainWindow()
 {
-    // there's got to be a better way to have different draw procs on different windows...
-    if (getWindow() && getWindow() == getWindowIndex(0))
-    {
-        if (_currentDisplayMode < _displayModes.size())
-            _displayModes[_currentDisplayMode].updater();
-        _ui.draw();
-    }
-    else
-    {
-        gl::clear(Color(0, 0, 0));
-    }
+    if (_currentDisplayMode < _displayModes.size())
+        _displayModes[_currentDisplayMode].updater();
+    _ui.draw();
+}
+
+void radomeApp::drawProjWindow()
+{
+    gl::clear(Color(0.6, 0, 0.4));
 }
 
 void radomeApp::setDisplayMode(int modeIndex)
@@ -112,7 +103,14 @@ void radomeApp::browseForModel()
 void radomeApp::showProjectorWindow(bool bShow)
 {
     if (getNumWindows() < 2)
+    {
+        if (bShow)
+        {
+            WindowRef projWindow = createWindow(Window::Format().size(640,160).fullScreenButton());
+            projWindow->connectDraw(&radomeApp::drawProjWindow, this);
+        }
         return;
+    }
     
     WindowRef win = getWindowIndex(1);
     if (bShow)
