@@ -27,15 +27,15 @@ void radomeApp::setup()
     _gfx.setCamera(&_cam);
     _gfx.initializeDomeGeometry(150, 110);
     _gfx.initCubeMap(1024);
+    _gfx.initProjectors(3, Vec2i(1280,800), 150, 150);
     
     _displayModes.push_back(DisplayMode("3D Scene",       [this]() { _gfx.display3DScene(); }));
     _displayModes.push_back(DisplayMode("Cube Map",       [this]() { _gfx.displayCubeMap(); }));
     _displayModes.push_back(DisplayMode("Dome Preview",   [this]() { _gfx.displayDomePreview(); }));
-    //_displayModes.push_back(DisplayMode("Output Preview", [this]() { _gfx.displayProjectorOutput(); }));
+    _displayModes.push_back(DisplayMode("Output Preview", [this]() { _gfx.displayProjectorOutput(); }));
 
     _currentDisplayMode = 0;
     _ui.init(this);
-    
 }
 
 void radomeApp::mouseDown(MouseEvent event)

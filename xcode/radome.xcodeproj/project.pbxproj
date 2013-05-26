@@ -23,17 +23,16 @@
 		5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */; };
 		5B03AF7217513DC00090E4BA /* cubeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7017513DC00090E4BA /* cubeMap.cpp */; };
 		5B03AF7617513DEF0090E4BA /* radomeAppUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03AF7317513DEE0090E4BA /* radomeAppUI.cpp */; };
-		5B03B02E175155660090E4BA /* color4.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AFEE175155660090E4BA /* color4.inl */; };
-		5B03B02F175155660090E4BA /* material.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03AFFE175155660090E4BA /* material.inl */; };
-		5B03B030175155660090E4BA /* matrix3x3.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B000175155660090E4BA /* matrix3x3.inl */; };
-		5B03B031175155660090E4BA /* matrix4x4.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B002175155660090E4BA /* matrix4x4.inl */; };
-		5B03B032175155660090E4BA /* quaternion.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B008175155660090E4BA /* quaternion.inl */; };
-		5B03B033175155660090E4BA /* vector2.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B00D175155660090E4BA /* vector2.inl */; };
-		5B03B034175155660090E4BA /* vector3.inl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B00F175155660090E4BA /* vector3.inl */; };
 		5B03B035175155660090E4BA /* AssimpLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B011175155660090E4BA /* AssimpLoader.cpp */; };
 		5B03B036175155660090E4BA /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B014175155660090E4BA /* Node.cpp */; };
 		5B03B03F175155D20090E4BA /* radomeModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B03D175155D20090E4BA /* radomeModel.cpp */; };
 		5B03B04117515E310090E4BA /* libassimp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B03B04017515E310090E4BA /* libassimp.a */; };
+		5B03B0441751D2960090E4BA /* radomeProjector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B0421751D2950090E4BA /* radomeProjector.cpp */; };
+		5B03B0471751E59E0090E4BA /* radome_frag.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B0451751E59E0090E4BA /* radome_frag.glsl */; };
+		5B03B0481751E59E0090E4BA /* radome_vert.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 5B03B0461751E59E0090E4BA /* radome_vert.glsl */; };
+		5B03B0491751E9E60090E4BA /* radome_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B0451751E59E0090E4BA /* radome_frag.glsl */; };
+		5B03B04A1751E9E60090E4BA /* radome_vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B0461751E59E0090E4BA /* radome_vert.glsl */; };
+		5B03B04C175200620090E4BA /* test_pattern.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B03B04B175200620090E4BA /* test_pattern.jpg */; };
 		5B094738174966F800E68C5F /* radomeGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094736174966F800E68C5F /* radomeGraphics.cpp */; };
 		5B09473B174967DF00E68C5F /* icosohedron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B094739174967DF00E68C5F /* icosohedron.cpp */; };
 		5B09473E1749721200E68C5F /* radomeCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B09473C1749721200E68C5F /* radomeCamera.cpp */; };
@@ -141,7 +140,12 @@
 		5B03B015175155660090E4BA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		5B03B03D175155D20090E4BA /* radomeModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeModel.cpp; path = ../src/radomeModel.cpp; sourceTree = "<group>"; };
 		5B03B03E175155D20090E4BA /* radomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeModel.h; path = ../src/radomeModel.h; sourceTree = "<group>"; };
-		5B03B04017515E310090E4BA /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = ../blocks/assimp/lib/macosx/libassimp.a; sourceTree = "<group>"; };
+		5B03B04017515E310090E4BA /* libassimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libassimp.a; path = lib/macosx/libassimp.a; sourceTree = "<group>"; };
+		5B03B0421751D2950090E4BA /* radomeProjector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeProjector.cpp; path = ../src/radomeProjector.cpp; sourceTree = "<group>"; };
+		5B03B0431751D2960090E4BA /* radomeProjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeProjector.h; path = ../src/radomeProjector.h; sourceTree = "<group>"; };
+		5B03B0451751E59E0090E4BA /* radome_frag.glsl */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = radome_frag.glsl; path = ../resources/radome_frag.glsl; sourceTree = "<group>"; };
+		5B03B0461751E59E0090E4BA /* radome_vert.glsl */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = radome_vert.glsl; path = ../resources/radome_vert.glsl; sourceTree = "<group>"; };
+		5B03B04B175200620090E4BA /* test_pattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test_pattern.jpg; path = ../resources/test_pattern.jpg; sourceTree = "<group>"; };
 		5B094736174966F800E68C5F /* radomeGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = radomeGraphics.cpp; path = ../src/radomeGraphics.cpp; sourceTree = "<group>"; };
 		5B094737174966F800E68C5F /* radomeGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radomeGraphics.h; path = ../src/radomeGraphics.h; sourceTree = "<group>"; };
 		5B094739174967DF00E68C5F /* icosohedron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = icosohedron.cpp; path = ../src/icosohedron.cpp; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				5B09473D1749721200E68C5F /* radomeCamera.h */,
 				5B03B03D175155D20090E4BA /* radomeModel.cpp */,
 				5B03B03E175155D20090E4BA /* radomeModel.h */,
+				5B03B0421751D2950090E4BA /* radomeProjector.cpp */,
+				5B03B0431751D2960090E4BA /* radomeProjector.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -287,7 +293,6 @@
 		29B97314FDCFA39411CA2CEA /* radome */ = {
 			isa = PBXGroup;
 			children = (
-				5B03B04017515E310090E4BA /* libassimp.a */,
 				01B97315FEAEA392516A2CEA /* Blocks */,
 				29B97315FDCFA39411CA2CEA /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
@@ -310,6 +315,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B03B04B175200620090E4BA /* test_pattern.jpg */,
+				5B03B0451751E59E0090E4BA /* radome_frag.glsl */,
+				5B03B0461751E59E0090E4BA /* radome_vert.glsl */,
 				5B03AF6B175104A40090E4BA /* Exo-Regular.ttf */,
 				5B03AF6917509B0F0090E4BA /* radome.icns */,
 				8D1265B883AB436292689AE6 /* Info.plist */,
@@ -405,6 +413,7 @@
 		5B03AFB1175155660090E4BA /* assimp */ = {
 			isa = PBXGroup;
 			children = (
+				5B03B04017515E310090E4BA /* libassimp.a */,
 				5B03AFE5175155660090E4BA /* src */,
 			);
 			name = assimp;
@@ -566,15 +575,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B03B0491751E9E60090E4BA /* radome_frag.glsl in Resources */,
+				5B03B04A1751E9E60090E4BA /* radome_vert.glsl in Resources */,
 				5B03AF6A17509B0F0090E4BA /* radome.icns in Resources */,
 				5B03AF6C175104A40090E4BA /* Exo-Regular.ttf in Resources */,
-				5B03B02E175155660090E4BA /* color4.inl in Resources */,
-				5B03B02F175155660090E4BA /* material.inl in Resources */,
-				5B03B030175155660090E4BA /* matrix3x3.inl in Resources */,
-				5B03B031175155660090E4BA /* matrix4x4.inl in Resources */,
-				5B03B032175155660090E4BA /* quaternion.inl in Resources */,
-				5B03B033175155660090E4BA /* vector2.inl in Resources */,
-				5B03B034175155660090E4BA /* vector3.inl in Resources */,
+				5B03B04C175200620090E4BA /* test_pattern.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +610,9 @@
 				5B03B035175155660090E4BA /* AssimpLoader.cpp in Sources */,
 				5B03B036175155660090E4BA /* Node.cpp in Sources */,
 				5B03B03F175155D20090E4BA /* radomeModel.cpp in Sources */,
+				5B03B0441751D2960090E4BA /* radomeProjector.cpp in Sources */,
+				5B03B0471751E59E0090E4BA /* radome_frag.glsl in Sources */,
+				5B03B0481751E59E0090E4BA /* radome_vert.glsl in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

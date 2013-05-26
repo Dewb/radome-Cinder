@@ -11,10 +11,13 @@
 
 class radomeCamera;
 class radomeModel;
+class radomeProjector;
 class CubeMap;
 
 using namespace ci;
 using namespace std;
+
+#include "cinder/gl/GlslProg.h"
 
 class radomeGraphics
 {
@@ -25,12 +28,14 @@ public:
     void setCamera(radomeCamera* pCamera);
     void initCubeMap(int textureSize);
     void initializeDomeGeometry(int radius, int height);
+    void initProjectors(int count, Vec2i resolution, float distance, float height);
     
     void update();
     
     void display3DScene();
     void displayDomePreview();
     void displayCubeMap();
+    void displayProjectorOutput();
     
     void loadModel(fs::path filepath);
     
@@ -42,6 +47,9 @@ protected:
     void renderToCubeMap();
     void renderToProjectors();
     
+    void beginShader();
+    void endShader();
+    
     int _domeDrawListIndex;
     float _domeRadius;
     float _domeHeight;
@@ -51,6 +59,10 @@ protected:
     radomeCamera* _pCamera;
     
     list<radomeModel*> _modelList;
+    vector<radomeProjector*> _projectorList;
+    
+    gl::GlslProgRef _shader;
+    gl::TextureRef _testPatternTexture;
 };
 
 #endif /* defined(__radome__radomeGraphics__) */

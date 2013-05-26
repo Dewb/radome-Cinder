@@ -150,7 +150,7 @@ void CubeMap::initEmptyTextures(int size, GLuint channels, GLuint storageFormat)
 	}
     
     gl::Fbo::Format format;
-    format.enableColorBuffer(false); // we intend to attach our own colour buffers
+    format.enableColorBuffer(true); // we intend to attach our own colour buffers
 	format.enableDepthBuffer(true);
     
 	fbo = gl::Fbo(m_size, m_size, format);
@@ -248,14 +248,14 @@ void CubeMap::debugDrawCubemapCameras()
 		Matrix44f modelViewProjectionMatrix = getLookAtMatrixForFace(face) * getProjectionMatrix();
 		
 		Matrix44f inverseCameraMatrix;
-		inverseCameraMatrix = modelViewProjectionMatrix.invertTransform();
+		inverseCameraMatrix = modelViewProjectionMatrix.inverted();
 		
         gl::pushMatrices();
         
         glMultMatrixf(inverseCameraMatrix);
         
         // Draw box in camera space, i.e. frustum in world space, box -1, -1, -1 to +1, +1, +1
-        gl::drawCube(Vec3f(0, 0, 0), Vec3f(2, 2, 2));
+        gl::drawCube(Vec3f(0, 0, 0), Vec3f(100, 100, 100));
 		
         gl::popMatrices();
 		
