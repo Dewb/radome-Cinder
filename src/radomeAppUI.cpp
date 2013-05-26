@@ -33,6 +33,9 @@ public:
     }
     void draw()
     {
+        gl::enableDepthRead(false);
+        gl::enableDepthWrite(false);
+        
         if (_pUI)
             _pUI->draw();
         if (_pCalibrationUI && _pCalibrationUI->isVisible())
@@ -224,7 +227,7 @@ void radomeAppUIImpl::onUIEvent(ciUIEvent* pEvent)
         auto pButton = dynamic_cast<ciUIButton*>(widget);
         if (pButton && !pButton->getValue())
         {
-            //showProjectorWindow();
+            _pApp->showProjectorWindow();
         }
     } else if (name == "Calibrate...") {
         auto pButton = dynamic_cast<ciUIButton*>(widget);

@@ -23,6 +23,7 @@ public:
     ~radomeGraphics();
     
     void setCamera(radomeCamera* pCamera);
+    void initCubeMap(int textureSize);
     void initializeDomeGeometry(int radius, int height);
     
     void update();
@@ -37,6 +38,9 @@ protected:
     void internalDrawScene();
     void internalDrawDome();
     void internalDrawGroundPlane();
+    
+    void renderToCubeMap();
+    void renderToProjectors();
     
     int _domeDrawListIndex;
     float _domeRadius;

@@ -1,6 +1,7 @@
 
 #include "radomeApp.h"
 
+
 class radomeApp::DisplayMode
 {
 public:
@@ -10,15 +11,28 @@ public:
     updateFn updater;
 };
 
+void radomeApp::prepareSettings(Settings *pSettings)
+{
+    Window::Format defaultWindowFormat;
+    Window::Format projectorWindowFormat;
+    
+    pSettings->prepareWindow(Window::Format().fullScreenButton());
+
+    RendererRef projectorRenderer(new RendererGl());
+    pSettings->prepareWindow(Window::Format().borderless().renderer(projectorRenderer));
+}
 
 void radomeApp::setup()
 {
+    getWindowIndex(1)->hide();
+    
     _cam.setCenterOfInterestPoint(Vec3f(0, 0, 0));
     _cam.setAspectRatio(getWindowWidth()/getWindowHeight());
     _cam.connectMouseEvents();
 
     _gfx.setCamera(&_cam);
     _gfx.initializeDomeGeometry(150, 110);
+    _gfx.initCubeMap(1024);
     
     _displayModes.push_back(DisplayMode("3D Scene",       [this]() { _gfx.display3DScene(); }));
     _displayModes.push_back(DisplayMode("Cube Map",       [this]() { _gfx.displayCubeMap(); }));
@@ -27,6 +41,7 @@ void radomeApp::setup()
 
     _currentDisplayMode = 0;
     _ui.init(this);
+    
 }
 
 void radomeApp::mouseDown(MouseEvent event)
@@ -40,18 +55,28 @@ void radomeApp::keyDown(KeyEvent event)
 
 void radomeApp::update()
 {
-    _cam.updateWindowSize(getWindowWidth(), getWindowHeight());
+    if (getNumWindows() > 0 && getWindow() == getWindowIndex(0))
+    {
+        _cam.updateWindowSize(getWindowWidth(), getWindowHeight());
     
-    _gfx.update();    
-    _ui.update();
+        _gfx.update();
+        _ui.update();
+    }
 }
 
 void radomeApp::draw()
 {
-    if (_currentDisplayMode < _displayModes.size())
-        _displayModes[_currentDisplayMode].updater();
-
-    _ui.draw();
+    // there's got to be a better way to have different draw procs on different windows...
+    if (getWindow() && getWindow() == getWindowIndex(0))
+    {
+        if (_currentDisplayMode < _displayModes.size())
+            _displayModes[_currentDisplayMode].updater();
+        _ui.draw();
+    }
+    else
+    {
+        gl::clear(Color(0, 0, 0));
+    }
 }
 
 void radomeApp::setDisplayMode(int modeIndex)
@@ -82,6 +107,18 @@ void radomeApp::browseForModel()
         return;
 
     _gfx.loadModel(path);
+}
+
+void radomeApp::showProjectorWindow(bool bShow)
+{
+    if (getNumWindows() < 2)
+        return;
+    
+    WindowRef win = getWindowIndex(1);
+    if (bShow)
+        win->show();
+    else
+        win->hide();
 }
 
 

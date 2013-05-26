@@ -33,6 +33,12 @@ void radomeGraphics::setCamera(radomeCamera* pCamera)
     _pCamera = pCamera;
 }
 
+void radomeGraphics::initCubeMap(int textureSize)
+{
+    _pCubeMap->initEmptyTextures(textureSize, GL_RGBA);
+    _pCubeMap->setNearFar(Vec2f(0.01, 8192.0));
+}
+
 void radomeGraphics::initializeDomeGeometry(int radius, int height)
 {
     _domeRadius = radius;
@@ -76,6 +82,29 @@ void radomeGraphics::update()
     for (auto model : _modelList) {
         model->update();
     }
+    
+    renderToCubeMap();
+    renderToProjectors();
+}
+
+void radomeGraphics::renderToCubeMap()
+{
+    gl::enableDepthRead();
+    gl::enableDepthWrite();
+    gl::pushMatrices();
+    
+    for(int i = 0; i < 6; i++) {
+        _pCubeMap->beginDrawingInto3D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i);
+        gl::clear(Color(0,0,0));
+        internalDrawScene();
+        _pCubeMap->endDrawingInto3D();
+    }
+    gl::popMatrices();
+}
+
+void radomeGraphics::renderToProjectors()
+{
+    
 }
 
 void radomeGraphics::display3DScene()
@@ -147,7 +176,7 @@ void radomeGraphics::internalDrawGroundPlane() {
 
 void radomeGraphics::displayCubeMap()
 {
-    gl::clear(Color( 0, 0, 0 ));
+    gl::clear(Color( 0, 0, 0.1 ));
 
     int SIDEBAR_WIDTH = 180; //todo: fix this
     gl::color(Color(0.78, 0.86, 1.0));
@@ -212,6 +241,12 @@ void radomeGraphics::loadModel(fs::path filePath)
     if (filePath.empty())
         return;
     
-    auto model = new radomeModel(filePath);
-    _modelList.push_back(model);
+    try {
+        auto model = new radomeModel(filePath);
+        _modelList.push_back(model);
+    }
+    catch(...)
+    {
+        // todo: display exception
+    }
 }

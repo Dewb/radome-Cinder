@@ -23,6 +23,8 @@ using namespace std;
 
 class radomeApp : public AppNative {
 public:
+    
+    virtual void prepareSettings(Settings* pSettings);
 	void setup();
 	void mouseDown( MouseEvent event );
 	void update();
@@ -36,6 +38,7 @@ public:
     void keyDown(KeyEvent event);
     
     void browseForModel();
+    void showProjectorWindow(bool bShow = true);
     
 protected:
     
