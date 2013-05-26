@@ -14,7 +14,7 @@
 //    }
 //}
 
-void radomeModel::drawModel() {
+void radomeModel::drawWithTransform() {
     gl::pushMatrices();
     gl::translate(_origin);
     gl::translate(-_rotationOrigin);

@@ -19,7 +19,7 @@ public:
     radomeModel(fs::path filename) : AssimpLoader(filename) {}
     
     //void update(float t);
-    void drawModel();
+    void drawWithTransform();
     
     Vec3f getOrigin() const { return _origin; }
     void setOrigin(Vec3f o) { _origin = o; }

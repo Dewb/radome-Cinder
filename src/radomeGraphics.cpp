@@ -141,7 +141,7 @@ void radomeGraphics::internalDrawScene()
 {
     for (auto model : _modelList)
     {
-        model->draw();
+        model->drawWithTransform();
     }
 }
 
